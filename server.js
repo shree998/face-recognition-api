@@ -11,8 +11,7 @@ const image = require('./Controllers/Image.js');
 
 
 const postgres = knex({
-	console.log()
-  client: 'pg',
+	client: 'pg',
   connection: {
     host : '127.0.0.1',
     user : 'postgres',
