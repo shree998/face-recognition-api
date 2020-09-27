@@ -11,6 +11,7 @@ const image = require('./Controllers/Image.js');
 
 
 const postgres = knex({
+	console.log()
   client: 'pg',
   connection: {
     host : '127.0.0.1',
@@ -32,6 +33,7 @@ app.get('/',(req,res)=>{
 	.then(user=>{
 			res.send(user);
 	})
+	.catch(err => res.status(400).json('Cannot find a single user'));
 	
 })  
  
