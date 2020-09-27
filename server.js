@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -20,7 +18,7 @@ const postgres = knex({
     password : 'test',
     database : 'smartbrain' 
   }
-});
+}); 
 
 //console.log(postgres.select('*').from('user'));
 
@@ -36,10 +34,10 @@ app.get('/',(req,res)=>{
 	})
 	
 })  
-
+ 
 app.post('/signin',(req,res) => {signin.handleSignIn(req,res,postgres,bcrypt)});
 
-app.post('/register', (req,res) => {register.handleRegister(req,res,postgres,bcrypt)});
+app.post('/register', (req,res) => {register.handleRegister(req,res,postgres,bcrypt)}); 
 	
 
 app.get('/profile/:id',(req,res) =>{profile.displayProfile(req,res, postgres)});
